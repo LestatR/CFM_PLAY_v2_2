@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Player</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' href='src/player.css' media='all' />
+    <!-- <script src="https://kit.fontawesome.com/6b02184769.js" crossorigin="anonymous"></script> -->
+    <!-- <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script> -->
+</head>
+
+<body>
+    <noscript>
+        <div id="nojs_message">
+            <!-- <p>In order for this audio player to function, you need to have javascript enabled. If for any reason you do
+                not wish to use javascript, here is an <a href="https://radio.mil.by/live">alternative link to an audio stream</a>.</p> -->
+                <p>Если Вы хотите использовать все функции плеера вам нужно включить javascript. Если по каким-то причинам Вы не хотите включить javascript, Вы можете слушать Компас FM в стандартном плеере по этой <a href="https://radio.mil.by/live">ссылке</a>.</p>
+        </div>
+    </noscript>
+    <div class="flex_1" id="flex_1">
+        <div class="background">
+            <div class="player">
+                <audio preload="metadata" id="audio"></audio>
+
+
+                <div class="controls">
+                    <h4 id="loader">
+                        <div class="loader"></div>
+                    </h4>
+                    <div class="aroundbutton" alt="Run the stream" id="aroundbutton" title="Включить Компас FM">
+                        <a class="playbutton">
+                            <i class="fas fa-play fa-fw on" onclick="" id="on"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="txt">
+                    <span class="txt">Компас FM</span>
+                    <div class="txt-string">
+                        <span id="artist" title="Artist">Artist</span>
+                        <span> - </span>
+                        <span id="song" title="Title">Title</span>
+                    </div>
+
+
+                </div>
+                <div class="quality" title="Higher quality" style="display: none">
+                    <span class="iconify" data-icon="si-glyph:button-hd" data-inline="false" style="line-height: 10px;color: #e06500;margin: 0.455em 0.3em;font-size: 29px;display: table-cell;">></span>
+                    <input type="checkbox" class="toggle" onclick="check()" id="quality" checked>
+                </div>
+
+                <div class="volume_control">
+                    <span class="iconify" data-icon="fa:volume-down" data-inline="false" style="color: #e06500;height:14px"></span>
+                    <input title="Volume" id="vol-control" type="range" min="0" max="100" step="1" value="100" class="progress" oninput="SetVolume(this.value)" onchange="SetVolume(this.value)" />
+                    <span class="iconify" data-icon="fa:volume-up" data-inline="false" style="color: #e06500;height:14px"></span>
+
+                </div>
+            </div>
+        </div>
+        <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+        <script src="https://kit.fontawesome.com/308709438d.js" crossorigin="anonymous"></script>
+        <script src="src/player.js"></script>
+
+</body>
+
+</html>
