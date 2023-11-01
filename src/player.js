@@ -86,29 +86,7 @@ document.getElementById('on').addEventListener('click', (evt) => {
     element.classList.add("fa-play");
 });
 
-/* function loadXMLDoc() {
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            myFunction(this);
-        }
-    };
-    xmlhttp.open("GET", "./cur_playing.xml", true);
-    xmlhttp.send();
-}
 
-function myFunction(xml) {
-    var x, i, xmlDoc, txt;
-    xmlDoc = xml.responseXML;
-    txt = "";
-    x = xmlDoc.getElementsByTagName("ARTIST");
-    for (i = 0; i < x.length; i++) {
-        txt += x[i].childNodes[0].nodeValue + "<br>";
-    }
-    document.getElementById("demo").innerHTML = txt;
-    console.log(txt);
-}
-loadXMLDoc(); */
 
 let artist = document.getElementById('artist');
 let title = document.getElementById('song');
@@ -129,9 +107,9 @@ function curPlay() {
     titName = xmlDoc.getElementsByTagName("NAME")[0].childNodes[0].textContent;
     artist.innerText = artName;
     title.innerText = titName;
-
+    setTimeout(function() {
+        curPlay();
+    }, 10000);
 }
 
-setTimeout(function() {
-    curPlay();
-}, 5000);
+curPlay();
