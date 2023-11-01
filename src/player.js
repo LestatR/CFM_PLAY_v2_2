@@ -107,6 +107,7 @@ function curPlay() {
     titName = xmlDoc.getElementsByTagName("NAME")[0].childNodes[0].textContent;
     artist.innerText = artName;
     title.innerText = titName;
+    console.log("yes");
     setTimeout(function() {
         curPlay();
     }, 10000);
