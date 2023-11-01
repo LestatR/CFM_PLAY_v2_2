@@ -110,7 +110,7 @@ function curPlay() {
     console.log("yes");
     setTimeout(function() {
         curPlay();
-    }, 10000);
+    }, 9000);
 }
 
 curPlay();
